@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Customizer - Material You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1>Logo Editor</h1>
+            <p>Personalize your brand in seconds</p>
+        </header>
+
+        <div class="preview-card">
+            <div class="logo-preview" id="logo-container">
+                <div class="logo-mark-wrap">
+                    <img class="kv-logo" src="kvlogo.png" alt="KV Logo">
+                    <span id="logo-text-mark-bottom">bersama membina masa depan</span>
+                </div>
+                <div class="logo-text-wrap">
+                    <span id="logo-text-top">KOLEJ VOKASIONAL</span>
+                    <span id="logo-text-subheading">KEMENTERIAN PENDIDIKAN MALAYSIA</span>
+                    <span class="text-divider"></span>
+                    <span id="logo-text-bottom"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <label class="toggle-row" for="advanced-toggle">
+                    <span>Show all text inputs</span>
+                    <input type="checkbox" id="advanced-toggle">
+                </label>
+            </div>
+            <div class="input-group">
+                <label for="text-input-bottom">Bottom text</label>
+                <input type="text" id="text-input-bottom" placeholder="Bottom text...">
+            </div>
+            <div id="advanced-inputs" class="advanced-inputs hidden">
+                <div class="input-group">
+                    <label for="text-input-top">Logo heading</label>
+                    <textarea id="text-input-top" placeholder="Logo heading..." rows="2" maxlength="32"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="text-input-subheading">Logo subheading</label>
+                    <input type="text" id="text-input-subheading" placeholder="Logo subheading..." maxlength="48">
+                </div>
+                <div class="input-group">
+                    <label for="text-input-mark-bottom">Bottom logo text</label>
+                    <input type="text" id="text-input-mark-bottom" placeholder="Bottom logo text..." maxlength="48">
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button id="download-btn">
+                    <img src="download.svg" alt="" class="download-icon" aria-hidden="true">
+                    Download PNG
+                </button>
+            </div>
+        </div>
+
+        <footer class="quick-footer">
+            <a href="https://rubyasba.github.io" target="_blank" rel="noopener noreferrer">Quick Footer Link</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

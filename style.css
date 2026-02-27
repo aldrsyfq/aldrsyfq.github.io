@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+@font-face {
+    font-family: "RBNo3.1 Bold";
+    src: local("RBNo3.1 Bold"),
+         url("./Font/RBNo3.1-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Material You Color Palette (Tonal Palettes) */
+    --md-sys-color-primary: #0061a4;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d1e4ff;
+    --md-sys-color-on-primary-container: #001d36;
+    --md-sys-color-surface: #fdfcff;
+    --md-sys-color-surface-variant: #e0e2ec;
+    --md-sys-color-on-surface: #1a1c1e;
+    --logo-mark-width: 100px;
+    --logo-subheading-width: 240px;
+    --bottom-text-width: 240px;
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Syncopate', sans-serif;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--md-sys-color-on-surface);
+    font-weight: bold;
+    font-family: 'Syncopate', 'Roboto', sans-serif;
+}
+
+header p {
+    color: #44474e;
+    margin-bottom: 32px;
+    font-family: 'Syncopate', 'Roboto', sans-serif;
+}
+
+.preview-card {
+    background-color: white;
+    padding: 60px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--md-sys-color-surface-variant);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-preview {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.logo-mark-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--logo-mark-width);
+    gap: 2px;
+}
+
+.kv-logo {
+    width: var(--logo-mark-width);
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-text-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    line-height: 1;
+    gap: 2px;
+}
+
+#logo-text-top,
+#logo-text-subheading,
+#logo-text-bottom {
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #252060;
+    font-family: 'RBNo3.1 Bold', 'Roboto', sans-serif;
+    text-align: left;
+    line-height: 80%;
+}
+
+#logo-text-bottom {
+    display: block;
+    width: var(--bottom-text-width);
+    color: #e6302c;
+    font-size: 30px;
+    white-space: nowrap;
+}
+
+#logo-text-top {
+    display: block;
+    width: var(--logo-subheading-width);
+    max-width: 100%;
+    font-size: 36px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#logo-text-subheading {
+    display: block;
+    width: var(--logo-subheading-width);
+    font-size: 14px;
+    line-height: 1.1;
+    white-space: nowrap;
+    transform-origin: top center;
+}
+
+.text-divider {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #252060;
+    margin-bottom: 2px;
+}
+
+.text-divider::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #252060;
+    right: 0;
+    bottom: -3px;
+}
+
+#logo-text-mark-bottom {
+    display: block;
+    width: calc(var(--logo-mark-width) - 10px);
+    transform: translateX(-5px);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #e6302c;
+    font-family: 'RBNo3.1 Bold', 'Roboto', sans-serif;
+    line-height: 1.2;
+    font-style: italic;
+    text-align: left;
+    transform-origin: top center;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    overflow: visible;
+}
+
+/* Input and Button Styling */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#text-input-top,
+#text-input-bottom,
+#text-input-subheading,
+#text-input-mark-bottom {
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-surface-variant);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#text-input-top {
+    resize: none;
+    min-height: 86px;
+    line-height: 1.4;
+}
+
+#text-input-top:focus,
+#text-input-bottom:focus,
+#text-input-subheading:focus,
+#text-input-mark-bottom:focus {
+    border: 2px solid var(--md-sys-color-primary);
+    padding: 17px 23px; /* Adjust for border thickness */
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #44474e;
+}
+
+.toggle-row {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+.advanced-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Material You FAB (Floating Action Button) Style */
+#download-btn {
+    width: 100%;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+    font-family: 'Syncopate', 'Roboto', sans-serif;
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+#download-btn:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-weight: 900;
+}
+
+#download-btn:active {
+    transform: scale(0.98);
+}
+
+.quick-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    margin: 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #44474e;
+    background-color: var(--md-sys-color-surface);
+}
+
+.quick-footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+}
+
+.quick-footer a:hover {
+    opacity: 0.75;
+}
