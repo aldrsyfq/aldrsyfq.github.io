@@ -7,20 +7,26 @@
     font-style: normal;
     font-display: swap;
 }
-
+@font-face {
+    font-family: "RBNo3.1";
+    src: local("RBNo3.1 Book"),
+         url("./Font/RBNo3.1-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     /* Material You Color Palette (Tonal Palettes) */
     --md-sys-color-primary: #0061a4;
-    --md-sys-color-on-primary: #ffffff;
-    --md-sys-color-primary-container: #d1e4ff;
+    --md-sys-color-on-primary: #e00000;
+    --md-sys-color-primary-container: #a7ccff;
     --md-sys-color-on-primary-container: #001d36;
-    --md-sys-color-surface: #fdfcff;
+    --md-sys-color-surface: #eef;
     --md-sys-color-surface-variant: #e0e2ec;
     --md-sys-color-on-surface: #1a1c1e;
     --logo-mark-width: 100px;
     --logo-subheading-width: 240px;
     --bottom-text-width: 240px;
-    
 }
 
 * {
@@ -28,7 +34,7 @@
 }
 
 body {
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'RBNo3.1 Bold', sans-serif;
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     display: flex;
@@ -36,7 +42,7 @@ body {
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
-    padding-bottom: 56px;
+    padding-bottom: 72px;
 }
 
 .main-container {
@@ -51,24 +57,26 @@ h1 {
     margin-bottom: 8px;
     color: var(--md-sys-color-on-surface);
     font-weight: bold;
-    font-family: 'Syncopate', 'Roboto', sans-serif;
+    font-family: 'RBNo3.1 Bold', 'Roboto', sans-serif;
 }
 
 header p {
     color: #44474e;
-    margin-bottom: 32px;
-    font-family: 'Syncopate', 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .preview-card {
     background-color: white;
     padding: 60px 20px;
+    padding-bottom: 5px;
     border-radius: 16px;
     border: 1px solid var(--md-sys-color-surface-variant);
-    margin-bottom: 24px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .logo-preview {
@@ -126,7 +134,10 @@ header p {
     width: var(--logo-subheading-width);
     max-width: 100%;
     font-size: 36px;
-    white-space: pre-wrap;
+    height: auto;
+    min-height: 0;
+    line-height: 0.8;
+    white-space: pre-line;
     overflow-wrap: anywhere;
     word-break: break-word;
 }
@@ -176,7 +187,7 @@ header p {
     overflow: visible;
 }
 
-/* Input and Button Styling */
+/* ### BUTTON STYLING ### */
 .controls {
     display: flex;
     flex-direction: column;
@@ -201,6 +212,8 @@ header p {
     resize: none;
     min-height: 86px;
     line-height: 1.4;
+    font-family: 'RBNo3.1 Regular', 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 #text-input-top:focus,
@@ -215,6 +228,7 @@ header p {
     display: block;
     text-align: left;
     margin-bottom: 8px;
+    margin-top: 8px;
     font-size: 0.9rem;
     color: #44474e;
 }
@@ -223,20 +237,70 @@ header p {
     display: flex !important;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0 !important;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.preview-toggle-group {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.toggle-row span {
+    font-size: 0.9rem;
+    font-family: 'RBNo3.1', 'Roboto', sans-serif;
+}
+
+#advanced-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 44px;
+    height: 24px;
+    border-radius: 999px;
+    background-color: #b8bcc8;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#advanced-toggle::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#advanced-toggle:checked {
+    background-color: var(--md-sys-color-primary);
+}
+
+#advanced-toggle:checked::before {
+    transform: translateX(20px);
+}
+
+#advanced-toggle:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
 }
 
 .advanced-inputs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
 }
+
 
 .hidden {
     display: none;
 }
 
-/* Material You FAB (Floating Action Button) Style */
 #download-btn {
     width: 100%;
     background-color: var(--md-sys-color-primary-container);
@@ -252,7 +316,7 @@ header p {
     border-radius: 16px;
     cursor: pointer;
     transition: transform 0.1s, box-shadow 0.2s;
-    font-family: 'Syncopate', 'Roboto', sans-serif;
+    font-family: 'RBNo3.1', 'Roboto', sans-serif;
 }
 
 .download-icon {
@@ -274,12 +338,24 @@ header p {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 24px;
+    bottom: 0;
+    width: 100%;
     margin: 0;
+    padding: 24px;
     text-align: center;
     font-size: 0.75rem;
     color: #44474e;
-    background-color: var(--md-sys-color-surface);
+    background: linear-gradient(180deg, #00c6ff00, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.quick-footer #link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .quick-footer a {
@@ -292,3 +368,5 @@ header p {
 .quick-footer a:hover {
     opacity: 0.75;
 }
+
+
