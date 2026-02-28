@@ -15,7 +15,7 @@ const MARK_BOTTOM_MIN_SIZE = 3;
 const SUBHEADING_MAX_SIZE = 13;
 const SUBHEADING_MIN_SIZE = 7;
 const BOTTOM_TEXT_MAX_SIZE = 30;
-const BOTTOM_TEXT_MIN_SIZE = 8;
+const BOTTOM_TEXT_MIN_SIZE = 1;
 
 function fitTextToWidth(element, maxSize, minSize) {
     if (!element || element.clientWidth <= 0) return;
