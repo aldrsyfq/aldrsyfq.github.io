@@ -110,15 +110,18 @@ downloadBtn.addEventListener('click', () => {
             const clonedMarkBottom = clonedDoc.getElementById('logo-text-mark-bottom');
 
             if (clonedLogoContainer) {
-                // Add export-only breathing room so descenders are not clipped.
-                clonedLogoContainer.style.paddingBottom = '10px';
+                // Export a tight, vertically centered crop of the logo only.
+                clonedLogoContainer.style.paddingTop = '0';
+                clonedLogoContainer.style.paddingBottom = '8px';
+                clonedLogoContainer.style.marginTop = '0';
+                clonedLogoContainer.style.marginBottom = '0';
                 clonedLogoContainer.style.overflow = 'visible';
             }
 
             if (clonedMarkBottom) {
-                // Slightly larger line box for y/q/p/j during canvas text render.
-                clonedMarkBottom.style.lineHeight = '1.35';
-                clonedMarkBottom.style.paddingBottom = '4px';
+                // Keep text fully visible without adding extra bottom space.
+                clonedMarkBottom.style.lineHeight = '1.2';
+                clonedMarkBottom.style.paddingBottom = '2px';
             }
         }
     }).then(canvas => {
