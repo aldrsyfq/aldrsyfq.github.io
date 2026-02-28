@@ -75,9 +75,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     position: sticky;
     top: 0;
     z-index: 20;
@@ -377,3 +377,59 @@ body {
 }
 
 
+
+
+@media (max-width: 600px) {
+    :root {
+        --logo-mark-width: 82px;
+        --logo-subheading-width: 182px;
+        --bottom-text-width: 182px;
+    }
+
+    .top-header {
+        padding: 14px 10px;
+    }
+
+    .top-header h1 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .preview-card {
+        gap: 12px;
+    }
+
+    .logo-preview {
+        padding: 24px 8px;
+        gap: 6px;
+    }
+
+    #logo-text-top {
+        font-size: 27px;
+    }
+
+    #logo-text-subheading {
+        font-size: 11px;
+    }
+
+    #logo-text-bottom {
+        font-size: 22px;
+    }
+
+    #logo-text-mark-bottom {
+        font-size: 8px;
+    }
+
+    .main-container {
+        width: 92%;
+        margin-top: 12px;
+    }
+
+    #text-input-top,
+    #text-input-bottom,
+    #text-input-subheading,
+    #text-input-mark-bottom,
+    #download-btn {
+        padding: 14px 16px;
+    }
+}
